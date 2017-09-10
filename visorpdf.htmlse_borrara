@@ -1,0 +1,48 @@
+<head>
+<!-- <script type="text/javascript" src="js/jquery.min.js"></script> 
+<script type="text/javascript" src="js/jquery.gdocsviewer.min.js"></script>
+<script type="text/javascript" src="http://github.com/malsup/media/raw/master/jquery.media.js?v0.92"></script>
+<script type="text/javascript" src="jquery.metadata.js"></script> -->
+</head>
+<html>
+<body>
+
+<!--<p>Ricardo Morales Canales</p>
+<p>Muramoto Sumitroncis</p>
+<p>Ingeniero de Software</p>
+<p>6642631991</p>-->
+
+<!--forma 1 con archivo local
+<iframe src="ricardo.html"style="width:100%; height:100px;"frameborder="1"></iframe>
+<div id="contentframe" style="position:relative; top: 0px; left: 0px;">
+<iframe src="pdf.pdf"
+style="width:100%; height:700px;"frameborder="1"></iframe></div>-->
+
+<!--forma 2 con archivo en url publico-->
+<!--<iframe src="ricardo.html"style="width:100%; height:100px;"frameborder="1"></iframe>
+<div id="contentframe" style="position:relative; top: 0px; left: 0px;">
+<iframe src="https://docs.google.com/gview?url=http://www.pdf995.com/samples/pdf.pdf&embedded=true"
+style="width:100%; height:700px;"frameborder="1"></iframe></div>-->
+
+
+<!--<a href="pdf.pdf" class="embed">Download file</a>
+ <script>
+$('a.embed').gdocsViewer({ width: 600, height: 800 });
+    </script>-->
+
+<!--
+<a class="media" href="pdf.pdf">PDF File</a> 
+<a class="media {type: 'html'}" href="http://www.pdf995.com/samples/pdf.pdf">HTML File</a> 
+ <script>
+		 $('a.media').media({width:500, height:400});  
+  </script>
+-->
+<!--
+<object data="http://yoursite.com/the.pdf" type="application/pdf" width="700px" height="700px">
+    <embed src="http://www.pdf995.com/samples/pdf.pdf">
+        This browser does not support PDFs. Please download the PDF to view it: <a href="http://yoursite.com/the.pdf">Download PDF</a>.</p>
+    </embed>
+</object>
+-->
+</body>
+</html>

@@ -1,0 +1,111 @@
+  
+
+--- DATABASE recibos_nomina
+Create table Puestos
+(
+	
+	idIdentity int auto_increment,
+    
+	Puesto varchar(200) not null unique,
+    
+	Descripcion varchar(200),
+    
+	primary key(idIdentity)
+
+)
+Engine=InnoDB;
+  
+
+Create table Anios
+
+(
+	
+	idAnio int primary key not null,    
+
+	FechaInicio datetime not null, 
+   
+	FechaFin datetime not null 
+
+)
+ENGINE=InnoDB;
+
+Create table Semanas
+(
+	
+	idIdentity bigint auto_increment not null unique,
+	
+	idSemana smallint not null,
+  
+	idAnio int not null,
+    
+	FechaInicio datetime not null,
+    
+	FechaFin datetime not null,
+   
+	 primary key (idSemana,idAnio),
+    
+	CONSTRAINT idSemana_idAnio foreign key(idAnio) references Anios(idAnio)
+
+)
+ENGINE=InnoDB;
+
+Create table Empleados
+(
+
+	idIdentity bigint not null,
+	
+	PrimerNombre varchar(50) not null,
+	
+	SegundoNombre varchar(50) not null,
+	
+	ApellidoPaterno varchar(50) not null,
+	
+	ApellidoMaterno varchar(50) not null,
+	
+	NSS varchar(50) not null,
+	
+	RFC varchar(50) not null,
+	
+	idPuesto int ,
+	
+	FechaInicio datetime not null,
+
+	FechaFin datetime not null,
+	
+	NickName varchar(20) null,
+
+	Contrasena varchar(20) ,
+	
+	primary key (idIdentity),
+	
+	constraint idPuesto_puesto foreign key(idPuesto) references Puestos(idIdentity)
+
+)ENGINE=InnoDB;
+
+CREATE table TiposRecibo
+(
+	idIdentity tinyint auto_increment primary key,
+	TipoRecibo varchar(50) not null unique
+)ENGINE=InnoDB;
+
+
+Create table relEmpleadosRecibos
+(
+	
+	idRelUsuariosRecibos bigint auto_increment unique,
+		idEmpleado bigint not null,
+	
+	idRelSemana bigint not null,
+
+	idTipoRecibo tinyint not null,
+	
+	Recibo longblob not null,
+    
+	primary key (idEmpleado,idRelSemana,idTipoRecibo),
+	
+	constraint idEmpleado_empleado foreign key(idEmpleado) references Empleados(idIdentity),
+			constraint idSemana_semama foreign key(idRelSemana ) references Semanas(idIdentity),
+    
+	constraint idTipo_recibo foreign key(idTipoRecibo ) references TiposRecibo(idIdentity)
+
+)ENGINE=InnoDB;
